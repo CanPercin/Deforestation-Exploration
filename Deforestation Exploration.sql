@@ -195,13 +195,14 @@ ORDER BY 5)
 SELECT *
 FROM forestation a
 WHERE a.fp16 < a.fp90;
-......
-There is one particularly bright spot in the data at the country level, China. This country actually increased in forest area from 1990 to 2016 by 527229.06 km2. 
-It would be interesting to study what has changed in this country over this time to drive this figure in the data higher. 
-The country with the next largest increase in forest area from 1990 to 2016 was the United States, but it only saw an increase of 79200 km2, much lower than the figure for China.
 
-China and United States are of course very large countries in total land area, so when we look at the largest percent change in forest area from 1990 to 2016,
-we aren’t surprised to find a much smaller country listed at the top. 
+
+--There is one particularly bright spot in the data at the country level, China. This country actually increased in forest area from 1990 to 2016 by 527229.06 km2. 
+--It would be interesting to study what has changed in this country over this time to drive this figure in the data higher. 
+--The country with the next largest increase in forest area from 1990 to 2016 was the United States, but it only saw an increase of 79200 km2, much lower than the figure for China.
+
+--China and United States are of course very large countries in total land area, so when we look at the largest percent change in forest area from 1990 to 2016,
+--we aren’t surprised to find a much smaller country listed at the top. 
 
 
 WITH abridged_f2016 AS (
@@ -231,7 +232,7 @@ GROUP BY 1,2,3
 HAVING f16.fa16_sqkm - f90.fa90_sqkm >0 OR f16.fa16_sqkm - f90.fa90_sqkm < 0
 ORDER BY 4 DESC;
 
-......
+
 
 --3.a Which 5 countries saw the largest amount decrease in forest area from 1990 to 2016? What was the difference in forest area for each?
 
@@ -297,8 +298,6 @@ HAVING (((f16.fa16_sqkm - f90.fa90_sqkm)/f90.fa90_sqkm)*100 >0 OR ((f16.fa16_sqk
 ORDER BY 5 ASC
 LIMIT 5;
 
-
------
 
 --3.c If countries were grouped by percent forestation in quartiles, which group had the most countries in it in 2016?
 
@@ -426,14 +425,14 @@ ORDER BY 2 DESC;
 
 
 
-*In the following 3 questions (3f,3g,3h), I also calculated the change in forestation percentage. Thus, i didn't use only 2016 forestation percentages. 
+--In the following 3 questions (3f,3g,3h), I also calculated the change in forestation percentage. Thus, i didn't use only 2016 forestation percentages. 
 
-I answer last 3 questions according to percentage changes between 1990 and 2016.
+--I answer last 3 questions according to percentage changes between 1990 and 2016.
 
 
 --3.f If countries were grouped by percent forestation change in quartiles, which group had the most countries (1990-2016)?
 
-*I could use NTILE() function but there was a requirement for the usage of CASE command in the rubric.
+--I could use NTILE() function but there was a requirement for the usage of CASE command in the rubric.
 
 WITH abridged_f2016 AS (
   SELECT *
