@@ -1,12 +1,3 @@
-It's a resubmition. You can follow the revised parts by lines demonstrated below.
-
-
---Line 26 "ON l.country_code = f.country_code" to "ON l.country_code = f.country_code AND l.year = f.year"
---Line 175-206 SELF JOIN used to filter regions of the world DECREASED in forest area from 1990 to 2016. 
---Linelist = [25, 27, 195, 233, 261, 265, 268, 293, 297, 300,300, 339, 382, 383, 416, 429, 468, 472, 475, 499, 502, 505, 527, 530, 533, 541, 545, 548]
-linelist represents the false join type that I forgot. All "JOIN" commands changed to "LEFT JOIN" commands.
-
-
 --CREATING VIEW
 
 
